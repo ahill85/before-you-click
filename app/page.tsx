@@ -76,9 +76,6 @@ export default function Home() {
           Got a message that feels off? Paste it below and Basil will sniff out
           whether it&apos;s a scam. Free. No account. Plain English.
         </p>
-        <p className="mt-3 text-lg text-soft italic">
-          Built to protect my mum... and my sanity.
-        </p>
       </header>
 
       {/* Sniffer */}
@@ -111,10 +108,10 @@ export default function Home() {
         <div className="max-w-xl mx-auto">
           <h2 className="text-2xl font-extrabold text-ink">Why this exists</h2>
           <p className="mt-4 text-lg text-soft leading-relaxed">
-            My mum kept forwarding me every suspicious email, text and Facebook
-            message asking <em>&ldquo;Andrew, is this a scam?&rdquo;</em> Eventually I
-            thought: there has to be a better way. So I built one — and gave the
-            job to a pug.
+            Basil kept being forwarded every suspicious email, text and Facebook
+            message asking <em>&ldquo;Basil, is this poo okay to eat?&rdquo;</em>{" "}
+            Eventually he stole a computer, asked AI for help, and turned himself
+            into a full-time sniffing service. You&apos;re welcome.
           </p>
           <p className="mt-6 text-base text-soft leading-relaxed">
             Basil checks for scam tricks, not your identity. Nothing you paste is

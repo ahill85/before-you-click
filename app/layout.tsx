@@ -7,7 +7,8 @@ export const metadata: Metadata = {
     "Paste any suspicious email, text or link. Basil the pug sniffs it and tells you in plain English if it's a scam. Free, no account, no jargon.",
   openGraph: {
     title: "Before You Click 🐶",
-    description: "Built to protect my mum... and my sanity.",
+    description:
+      "Paste any suspicious email, text or link. Basil the pug sniffs it and tells you if it's a scam.",
   },
 };
 
