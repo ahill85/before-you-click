@@ -14,7 +14,7 @@ export default function LoadingBasil() {
 
   return (
     <div
-      className="flex flex-col items-center gap-4 py-10"
+      className="flex flex-col items-center gap-2 py-4"
       role="status"
       aria-live="polite"
     >

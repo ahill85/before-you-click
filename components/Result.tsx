@@ -27,8 +27,8 @@ export default function Result({
 
   return (
     <section aria-label="Basil's verdict" className="fade-up">
-      <div className={`rounded-3xl border-2 ${border} ${bg} p-6 sm:p-10`}>
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+      <div className={`rounded-3xl border-2 ${border} ${bg} p-5 sm:p-8`}>
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5">
           <Basil mood={mood} size={130} className="shrink-0" />
           <div className="text-center sm:text-left">
             <p className="text-lg font-bold text-soft uppercase tracking-wide">
@@ -43,18 +43,18 @@ export default function Result({
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-5">
           <Bones score={result.score} />
         </div>
 
-        <p className="mt-6 text-xl leading-relaxed text-ink">{result.summary}</p>
+        <p className="mt-4 text-xl leading-relaxed text-ink">{result.summary}</p>
         <p className="mt-2 text-lg text-soft">{CONFIDENCE_LABEL[result.confidence]}</p>
       </div>
 
-      <div className="mt-6 grid gap-6 md:grid-cols-2">
-        <div className="rounded-3xl border-2 border-line bg-card p-6 sm:p-8">
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <div className="rounded-3xl border-2 border-line bg-card p-5 sm:p-6">
           <h3 className="text-2xl font-extrabold text-ink">Why?</h3>
-          <ul className="mt-4 space-y-4">
+          <ul className="mt-3 space-y-3">
             {result.reasons.map((r, i) => (
               <li key={i} className="flex gap-3 text-lg leading-relaxed text-ink">
                 <span aria-hidden="true" className="shrink-0 mt-0.5">
@@ -66,9 +66,9 @@ export default function Result({
           </ul>
         </div>
 
-        <div className="rounded-3xl border-2 border-line bg-card p-6 sm:p-8">
+        <div className="rounded-3xl border-2 border-line bg-card p-5 sm:p-6">
           <h3 className="text-2xl font-extrabold text-ink">What should I do?</h3>
-          <ol className="mt-4 space-y-4">
+          <ol className="mt-3 space-y-3">
             {result.actions.map((a, i) => (
               <li key={i} className="flex gap-3 text-lg leading-relaxed text-ink">
                 <span
@@ -84,7 +84,7 @@ export default function Result({
         </div>
       </div>
 
-      <div className="mt-8 text-center">
+      <div className="mt-5 text-center">
         <button
           onClick={onReset}
           className="min-h-14 px-8 py-4 rounded-2xl bg-ink text-white text-xl font-extrabold hover:bg-soft transition-colors"
