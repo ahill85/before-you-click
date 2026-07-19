@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "Before You Click",
     description:
       "Paste a suspicious email, text or link. Basil the pug sniffs out scams in plain English.",
-    start_url: "https://astarmedia.net/before-you-click/",
-    id: "https://astarmedia.net/before-you-click/",
+    start_url: "/",
+    id: "/",
     display: "standalone",
     background_color: "#ffffff",
     theme_color: "#d97706",
