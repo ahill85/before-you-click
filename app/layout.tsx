@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const SITE_URL = "https://before-you-click.vercel.app";
 const TITLE = "Before You Click — Is this a scam? Ask Basil.";
 const DESCRIPTION =
   "Free scam checker. Paste any suspicious email, text, link or screenshot. Basil the pug sniffs it and tells you in plain English if it's a scam. No account. No jargon.";

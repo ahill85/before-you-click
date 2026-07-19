@@ -9,18 +9,28 @@ export const maxDuration = 30;
 
 const MAX_INPUT = 20000;
 
+const CORS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: CORS });
+}
+
 export async function POST(req: Request) {
   let text: unknown;
   try {
     ({ text } = await req.json());
   } catch {
-    return NextResponse.json({ error: "Basil couldn't read that." }, { status: 400 });
+    return NextResponse.json({ error: "Basil couldn't read that." }, { status: 400, headers: CORS });
   }
 
   if (typeof text !== "string" || text.trim().length === 0) {
     return NextResponse.json(
       { error: "Paste something for Basil to sniff first." },
-      { status: 400 }
+      { status: 400, headers: CORS }
     );
   }
 
@@ -46,5 +56,5 @@ export async function POST(req: Request) {
     result = nose;
   }
 
-  return NextResponse.json(result);
+  return NextResponse.json(result, { headers: CORS });
 }

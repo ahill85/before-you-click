@@ -1,0 +1,15 @@
+# Upload this folder's contents into:
+#   public_html/before-you-click/
+# (same idea as public_html/hoops-redraft/)
+#
+# Needs Apache: mod_rewrite, mod_proxy, mod_proxy_http, mod_headers, SSLProxyEngine
+# The X-Astar-Proxy header stops a redirect loop with Vercel.
+
+RewriteEngine On
+SSLProxyEngine On
+
+# Pass every request under /before-you-click/ through to Vercel
+RewriteRule ^(.*)$ https://before-you-click.vercel.app/$1 [P,L]
+
+RequestHeader set X-Astar-Proxy "1"
+RequestHeader set X-Forwarded-Proto "https"
