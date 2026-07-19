@@ -9,5 +9,4 @@ astar-dist
 next-env.d.ts
 .vercel
 app/_api_hid
-app/_icon.tsx.hid
 app/_apple-icon.tsx.hid

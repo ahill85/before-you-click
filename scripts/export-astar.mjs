@@ -6,7 +6,6 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const hide = [
   ["app/api", "app/_api_hid"],
-  ["app/icon.tsx", "app/_icon.tsx.hid"],
   ["app/apple-icon.tsx", "app/_apple-icon.tsx.hid"],
 ];
 
