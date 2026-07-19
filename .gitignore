@@ -1,9 +1,13 @@
 node_modules
 .next
 out
+astar-dist
 .env*.local
 .env
 .DS_Store
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+app/_api_hid
+app/_icon.tsx.hid
+app/_apple-icon.tsx.hid

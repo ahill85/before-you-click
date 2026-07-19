@@ -1,40 +1,37 @@
-# Upload to astarmedia.net
+# Upload to HostPapa (astarmedia.net)
 
-Same dual-host idea as Hoops Redraft:
+Same pattern as Hoops Redraft — **static files on Astar**, API on Vercel.
 
 | Piece | Where |
 |-------|--------|
-| Public URL | `https://astarmedia.net/before-you-click/` |
-| App + `/api/sniff` | Vercel (`before-you-click.vercel.app`) behind this proxy |
+| Website | `public_html/before-you-click/` on HostPapa |
+| Sniff API | Vercel (`https://before-you-click.vercel.app/api/sniff`) |
+
+No SSL proxy. No `mod_proxy`. Just upload files like hoops.
 
 ## What to upload
 
-1. On the server, create folder: `public_html/before-you-click/`
-2. Upload **only** this file into that folder:
-   - `.htaccess` (from this `astar/` folder)
+Upload **everything inside** this folder:
 
-That’s it — no HTML build to sync. Apache reverse-proxies the Next.js app from Vercel.
+`scam-detector/astar-dist/`
 
-## After upload — test
+into:
 
-Open: https://astarmedia.net/before-you-click/
+`public_html/before-you-click/`
 
-You should see Basil / Before You Click. Try a sniff.
+(Replace whatever is there from the old proxy attempt — delete the old `.htaccess` proxy version first.)
 
-Also check: https://before-you-click.vercel.app/  
-→ should redirect to the astarmedia URL.
+## After upload
 
-## If you get 500 / blank page
+1. Open https://astarmedia.net/before-you-click/
+2. Paste a message and hit Sniff It (API calls Vercel in the background)
+3. https://before-you-click.vercel.app/ should redirect here
 
-Your host may not allow `mod_proxy` (common on some shared plans). Then either:
+## Rebuild later (after code changes)
 
-1. Ask the host to enable `mod_proxy`, `mod_proxy_http`, `mod_headers`, and `SSLProxyEngine`, **or**
-2. Tell me and we’ll switch to a Cloudflare / nginx setup instead.
-
-## Optional: root robots note
-
-If you maintain `https://astarmedia.net/robots.txt`, you can add:
-
+```bash
+cd scam-detector
+npm run export:astar
 ```
-Sitemap: https://astarmedia.net/before-you-click/sitemap.xml
-```
+
+Then re-upload `astar-dist/` to HostPapa.

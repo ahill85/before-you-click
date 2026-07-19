@@ -10,6 +10,7 @@ import ScansToast from "@/components/ScansToast";
 import { scansLeft as getScansLeft, useOneScan } from "@/lib/limits";
 import { addRecent } from "@/lib/recent";
 import { scansLeftMessage } from "@/lib/verdicts";
+import { sniffApiUrl } from "@/lib/api";
 import type { SniffResult } from "@/lib/types";
 
 type Phase = "idle" | "sniffing" | "done";
@@ -34,7 +35,7 @@ export default function Home() {
     const started = Date.now();
     let data: SniffResult;
     try {
-      const res = await fetch("/api/sniff", {
+      const res = await fetch(sniffApiUrl(), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),

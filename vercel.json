@@ -2,14 +2,12 @@
   "redirects": [
     {
       "source": "/",
-      "missing": [{ "type": "header", "key": "x-astar-proxy" }],
       "destination": "https://astarmedia.net/before-you-click/",
       "permanent": true
     },
     {
-      "source": "/:path((?!api/).+)",
-      "missing": [{ "type": "header", "key": "x-astar-proxy" }],
-      "destination": "https://astarmedia.net/before-you-click/:path*",
+      "source": "/:path((?!api/).*)",
+      "destination": "https://astarmedia.net/before-you-click/",
       "permanent": true
     }
   ],
