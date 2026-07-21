@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://astarmedia.net/before-you-click/",
+      "permanent": true
+    },
+    {
+      "source": "/:path((?!api/).*)",
+      "destination": "https://astarmedia.net/before-you-click/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/api/(.*)",
